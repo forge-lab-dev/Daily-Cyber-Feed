@@ -1,14 +1,11 @@
 import os
-import smtplib
 import time
 from datetime import datetime, timedelta, timezone
-from email.message import EmailMessage
 
 import feedparser
 import requests
 
 NOW = datetime.now(timezone.utc)
-START = NOW - timedelta(hours=30)
 
 NVD_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
 KEV_URL = (
@@ -19,26 +16,30 @@ NEWS_FEEDS = {
     "SecurityWeek": "https://www.securityweek.com/feed/",
 }
 
-# Replace with YOUR vendors/products. Broad terms are for news, not proof of exposure.
-ASSETS = [
+PRIORITY_TERMS = [
     x.strip().lower()
     for x in os.getenv("ASSET_KEYWORDS", "").split(",")
     if x.strip()
 ]
-SECTOR_TERMS = (
+
+SECTOR_TERMS = [
     "electric utility", "power grid", "substation", "electricity",
     "industrial control", "operational technology", "scada",
-    "energy sector", "power plant",
-)
-NEWS_TERMS = SECTOR_TERMS + (
-    "zero-day", "zero day", "ransomware", "exploited",
-    "cyberattack", "cyber attack", "ai cyber", "ai security",
-)
+    "energy sector", "power plant", "transmission", "distribution utility",
+    "data center",
+]
+
+NEWS_TERMS = PRIORITY_TERMS + SECTOR_TERMS + [
+    "zero-day", "zero day", "ransomware", "exploited", "cyberattack",
+    "cyber attack", "ai cyber", "ai security", "critical infrastructure",
+]
+
 session = requests.Session()
-session.headers["User-Agent"] = "power-cyber-briefing/0.1 (contact: operator)"
+session.headers["User-Agent"] = "power-cyber-briefing/0.2"
 
 
 def get_json(url, params=None, headers=None):
+    last_error = None
     for attempt in range(3):
         try:
             response = session.get(
@@ -46,15 +47,19 @@ def get_json(url, params=None, headers=None):
             )
             response.raise_for_status()
             return response.json()
-        except requests.RequestException:
-            if attempt == 2:
-                raise
+        except requests.RequestException as error:
+            last_error = error
             time.sleep(2 ** attempt)
+    raise RuntimeError(f"Request failed: {url}") from last_error
 
 
-def nvd_cves():
+def lookback_hours():
+    return 2 if os.getenv("BRIEFING_MODE", "morning") == "update" else 36
+
+
+def nvd_cves(start):
     params = {
-        "lastModStartDate": START.strftime("%Y-%m-%dT%H:%M:%S.000Z"),
+        "lastModStartDate": start.strftime("%Y-%m-%dT%H:%M:%S.000Z"),
         "lastModEndDate": NOW.strftime("%Y-%m-%dT%H:%M:%S.000Z"),
         "startIndex": 0,
     }
@@ -69,23 +74,22 @@ def nvd_cves():
         params["startIndex"] += data["resultsPerPage"]
         if params["startIndex"] >= data["totalResults"]:
             break
-        time.sleep(6)  # Conservative pacing for NVD.
+        time.sleep(6)
     return results
 
 
-def kev_additions():
+def kev_additions(start):
     data = get_json(KEV_URL)
+    day_start = start.replace(hour=0, minute=0, second=0, microsecond=0)
     return [
         item for item in data["vulnerabilities"]
         if datetime.strptime(
             item["dateAdded"], "%Y-%m-%d"
-        ).replace(tzinfo=timezone.utc) >= (
-            START - timedelta(days=1)
-        ).replace(hour=0, minute=0, second=0, microsecond=0)
+        ).replace(tzinfo=timezone.utc) >= day_start
     ]
 
 
-def news():
+def news(start):
     items = []
     for source, url in NEWS_FEEDS.items():
         feed = feedparser.parse(url)
@@ -99,109 +103,146 @@ def news():
                 time.mktime(stamp), timezone.utc
             )
             text = f"{entry.get('title', '')} {entry.get('summary', '')}".lower()
-            if published >= START and any(term in text for term in NEWS_TERMS):
+            if published >= start and any(term in text for term in NEWS_TERMS):
                 items.append((source, entry.get("title", ""), entry.get("link", "")))
     return items
 
 
-def matched_terms(text):
+def priority_hits(text):
     lower = text.lower()
-    return [term for term in ASSETS if term in lower]
+    return [term for term in PRIORITY_TERMS if term in lower]
 
 
 def build_brief(kev, cves, stories):
+    mode = os.getenv("BRIEFING_MODE", "morning")
+    start = NOW - timedelta(hours=lookback_hours())
+
     lines = [
-        f"U.S. power/OT cyber briefing — {NOW:%Y-%m-%d %H:%M UTC}",
-        f"Window: approximately {START:%Y-%m-%d %H:%M}–{NOW:%H:%M} UTC",
-        "Labels: KEV = confirmed exploited vulnerability; "
-        "news = reported, not independently verified.",
+        f":electric_plug: *Power / Critical-Infrastructure Cyber Brief*",
+        f"*Mode:* {mode.title()} | *Generated:* {NOW:%Y-%m-%d %H:%M UTC}",
+        f"*Window:* approximately {start:%Y-%m-%d %H:%M}–{NOW:%H:%M} UTC",
+        "*Labels:* `KEV` = confirmed exploited vulnerability; "
+        "`NEWS` = reported, not independently verified.",
         "",
-        f"NEW KEV ENTRIES ({len(kev)})",
+        f"*1. NEW KEV — CONFIRMED EXPLOITED VULNERABILITIES ({len(kev)})*",
     ]
-    for item in kev[:20]:
-        label = f"{item['vendorProject']} {item['product']}"
-        hits = matched_terms(label + " " + item.get("shortDescription", ""))
-        lines.append(
-            f"- {item['cveID']} | {label} | added {item['dateAdded']}"
-            f" | asset keyword: {', '.join(hits) if hits else 'none'}"
-            f" | https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
-        )
+
+    priority_kev, normal_kev = [], []
+    for item in kev:
+        text = " ".join([
+            item.get("vendorProject", ""), item.get("product", ""),
+            item.get("shortDescription", ""),
+        ])
+        (priority_kev if priority_hits(text) else normal_kev).append(item)
+
+    for label, group in (("PRIORITY", priority_kev), ("OTHER", normal_kev)):
+        for item in group[:20]:
+            lines.append(
+                f"`KEV` *{label}* — {item['cveID']} | "
+                f"{item.get('vendorProject', '')} {item.get('product', '')} | "
+                f"added {item['dateAdded']} | "
+                f"https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+            )
 
     relevant = []
     for cve in cves:
         desc = next(
-            (d["value"] for d in cve.get("descriptions", [])
-             if d.get("lang") == "en"),
+            (d["value"] for d in cve.get("descriptions", []) if d.get("lang") == "en"),
             "",
         )
-        hits = matched_terms(desc)
+        hits = priority_hits(desc)
         sector = any(term in desc.lower() for term in SECTOR_TERMS)
         if hits or sector:
             relevant.append((cve, desc, hits, sector))
 
     relevant.sort(key=lambda x: (not bool(x[2]), not x[3]))
-    lines += ["", f"NEW OR MODIFIED RELEVANT CVEs ({len(relevant)})"]
+    lines += ["", f"*2. NEW OR MODIFIED RELEVANT NVD CVEs ({len(relevant)})*"]
     for cve, desc, hits, sector in relevant[:25]:
+        label = "PRIORITY KEYWORD" if hits else "SECTOR TERM"
         lines.append(
-            f"- {cve['id']} | {'ASSET KEYWORD' if hits else 'SECTOR TERM'}"
-            f" | {desc[:170]} | https://nvd.nist.gov/vuln/detail/{cve['id']}"
+            f"`CVE` *{label}* — {cve['id']} | {desc[:160]} | "
+            f"https://nvd.nist.gov/vuln/detail/{cve['id']}"
         )
 
-    lines += ["", f"REPORTED CYBER/AI-CYBER NEWS ({len(stories)})"]
-    for source, title, link in stories[:20]:
-        lines.append(f"- [{source}] {title} | {link}")
+    priority_news, normal_news = [], []
+    for source, title, link in stories:
+        text = f"{title} {link}"
+        (priority_news if priority_hits(text) else normal_news).append(
+            (source, title, link)
+        )
 
-    if not ASSETS:
-        lines += ["", "Configure ASSET_KEYWORDS to identify your products."]
+    lines += ["", f"*3. REPORTED CYBER / AI-CYBER NEWS ({len(stories)})*"]
+    for label, group in (("PRIORITY", priority_news), ("OTHER", normal_news)):
+        for source, title, link in group[:20]:
+            lines.append(f"`NEWS` *{label}* — [{source}] {title} | {link}")
+
+    if not PRIORITY_TERMS:
+        lines += ["", ":warning: Set the `PRIORITY_KEYWORDS` repository variable."]
+
     lines += [
         "",
-        "Keyword matches do not establish affected versions, deployment, "
-        "exploitability, or operational impact. Verify against primary sources."
+        "*Caveats:* Keyword matches do not establish affected versions, "
+        "deployment, exploitability, or operational impact. Verify priority "
+        "items against CISA, NVD, vendor advisories, and credible incident reporting.",
     ]
     return "\n".join(lines)
 
 
-def deliver(text):
-    destinations = 0
+def deliver_to_slack(text):
     webhook = os.getenv("SLACK_WEBHOOK_URL")
-    if webhook:
-        # Split to keep individual Slack messages manageable.
-        chunks, current = [], ""
-        for line in text.splitlines():
-            if len(current) + len(line) > 3500:
-                chunks.append(current)
-                current = ""
-            current += line + "\n"
-        if current:
+    if not webhook:
+        raise RuntimeError("SLACK_WEBHOOK_URL secret is not set")
+
+    chunks, current = [], ""
+    for line in text.splitlines():
+        if len(current) + len(line) > 3500:
             chunks.append(current)
-        for chunk in chunks:
-            response = session.post(
-                webhook, json={"text": chunk}, timeout=20
-            )
-            response.raise_for_status()
-        destinations += 1
+            current = ""
+        current += line + "\n"
+    if current:
+        chunks.append(current)
 
-    if os.getenv("SMTP_HOST"):
-        msg = EmailMessage()
-        msg["Subject"] = f"Power/OT cyber briefing — {NOW:%Y-%m-%d}"
-        msg["From"] = os.environ["EMAIL_FROM"]
-        msg["To"] = os.environ["EMAIL_TO"]
-        msg.set_content(text)
-        with smtplib.SMTP(
-            os.environ["SMTP_HOST"],
-            int(os.getenv("SMTP_PORT", "587")),
-            timeout=30,
-        ) as smtp:
-            smtp.starttls()
-            smtp.login(os.environ["SMTP_USER"], os.environ["SMTP_PASSWORD"])
-            smtp.send_message(msg)
-        destinations += 1
-
-    if not destinations:
-        raise RuntimeError("Set SLACK_WEBHOOK_URL and/or SMTP settings")
+    for chunk in chunks:
+        response = session.post(
+            webhook,
+            json={
+                "text": chunk,
+                "unfurl_links": False,
+            },
+            timeout=20,
+        )
+        response.raise_for_status()
 
 
 if __name__ == "__main__":
-    brief = build_brief(kev_additions(), nvd_cves(), news())
-    deliver(brief)
+    start = NOW - timedelta(hours=lookback_hours())
+    brief = build_brief(
+        kev_additions(start),
+        nvd_cves(start),
+        news(start),
+    )
+    deliver_to_discord(brief)
+def deliver_to_discord(text):
+    webhook = os.getenv("DISCORD_WEBHOOK_URL")
+    if not webhook:
+        raise RuntimeError("DISCORD_WEBHOOK_URL secret is not set")
+
+    chunks, current = [], ""
+    for line in text.splitlines():
+        if len(current) + len(line) > 1900:
+            chunks.append(current)
+            current = ""
+        current += line + "\n"
+    if current:
+        chunks.append(current)
+
+    for chunk in chunks:
+        response = session.post(
+            webhook,
+            json={"content": chunk},
+            timeout=20,
+        )
+        response.raise_for_status()
+
+
 
