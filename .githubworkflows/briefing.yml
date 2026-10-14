@@ -1,9 +1,20 @@
-name: Morning cyber briefing
+name: Power and AI cyber briefing
 
 on:
   workflow_dispatch:
+    inputs:
+      mode:
+        description: "Run mode"
+        required: false
+        default: "morning"
+        type: choice
+        options:
+          - morning
+          - update
   schedule:
-    - cron: "17 7 * * *"
+    - cron: "0 8 * * *"
+      timezone: "America/Denver"
+    - cron: "0 9 * * *"
       timezone: "America/Denver"
 
 jobs:
@@ -12,19 +23,26 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -r requirements.txt
-      - run: python briefing.py
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run briefing
+        run: python briefing.py
         env:
-          ASSET_KEYWORDS: ${{ vars.ASSET_KEYWORDS }}
+          BRIEFING_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.mode || (github.event.schedule == '0 9 * * *' && 'update' || 'morning') }}
+          ASSET_KEYWORDS: ${{ vars.PRIORITY_KEYWORDS }}
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SMTP_HOST: ${{ secrets.SMTP_HOST }}
-          SMTP_PORT: ${{ secrets.SMTP_PORT }}
-          SMTP_USER: ${{ secrets.SMTP_USER }}
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
-          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+
+
+
+
+
+
 
