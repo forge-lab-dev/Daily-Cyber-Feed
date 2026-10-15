@@ -188,10 +188,10 @@ def build_brief(kev, cves, stories):
     return "\n".join(lines)
 
 
-def deliver_to_slack(text):
-    webhook = os.getenv("SLACK_WEBHOOK_URL")
+def deliver_to_discord(text):
+    webhook = os.getenv("DISCORD_WEBHOOK_URL")
     if not webhook:
-        raise RuntimeError("SLACK_WEBHOOK_URL secret is not set")
+        raise RuntimeError("DISCORD_WEBHOOK_URL secret is not set")
 
     chunks, current = [], ""
     for line in text.splitlines():
