@@ -25,7 +25,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -42,7 +42,6 @@ jobs:
           ASSET_KEYWORDS: ${{ vars.PRIORITY_KEYWORDS }}
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-
 
 
 
