@@ -1,6 +1,6 @@
 name: Power and AI cyber briefing
 
-on:
+"on":
   workflow_dispatch:
     inputs:
       mode:
