@@ -187,50 +187,26 @@ def build_brief(kev, cves, stories):
     ]
     return "\n".join(lines)
 
-
 def deliver_to_discord(text):
     webhook = os.getenv("DISCORD_WEBHOOK_URL")
     if not webhook:
         raise RuntimeError("DISCORD_WEBHOOK_URL secret is not set")
 
-    chunks, current = [], ""
-    for line in text.splitlines():
-        if len(current) + len(line) > 3500:
-            chunks.append(current)
-            current = ""
-        current += line + "\n"
-    if current:
-        chunks.append(current)
-
-    for chunk in chunks:
-        response = session.post(
-            webhook,
-            json={
-                "content": chunk},
-            timeout=20,
+    if not webhook.startswith("https://discord.com/api/webhooks/"):
+        raise RuntimeError(
+            "DISCORD_WEBHOOK_URL does not look like a Discord webhook URL"
         )
-        response.raise_for_status()
 
-
-if __name__ == "__main__":
-    start = NOW - timedelta(hours=lookback_hours())
-    brief = build_brief(
-        kev_additions(start),
-        nvd_cves(start),
-        news(start),
-    )
-    deliver_to_discord(brief)
-def deliver_to_discord(text):
-    webhook = os.getenv("DISCORD_WEBHOOK_URL")
-    if not webhook:
-        raise RuntimeError("DISCORD_WEBHOOK_URL secret is not set")
-
-    chunks, current = [], ""
+    chunks = []
+    current = ""
     for line in text.splitlines():
-        if len(current) + len(line) > 1900:
+        candidate = current + line + "\n"
+        if len(candidate) > 1900:
             chunks.append(current)
-            current = ""
-        current += line + "\n"
+            current = line + "\n"
+        else:
+            current = candidate
+
     if current:
         chunks.append(current)
 
@@ -242,5 +218,11 @@ def deliver_to_discord(text):
         )
         response.raise_for_status()
 
-
-
+if __name__ == "__main__":
+    start = NOW - timedelta(hours=lookback_hours())
+    brief = build_brief(
+        kev_additions(start),
+        nvd_cves(start),
+        news(start),
+    )
+    deliver_to_discord(brief)
