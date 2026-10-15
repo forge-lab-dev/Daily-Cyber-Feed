@@ -206,9 +206,7 @@ def deliver_to_discord(text):
         response = session.post(
             webhook,
             json={
-                "text": chunk,
-                "unfurl_links": False,
-            },
+                "content": chunk},
             timeout=20,
         )
         response.raise_for_status()
