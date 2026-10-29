@@ -4,25 +4,45 @@ name: Power and AI cyber briefing
   workflow_dispatch:
     inputs:
       mode:
-        description: "Run mode"
+        description: "auto posts whatever is due. morning or update is a test run and records nothing."
         required: false
-        default: "morning"
+        default: "auto"
         type: choice
         options:
+          - auto
           - morning
           - update
-
+      dry_run:
+        description: "Build the brief and show it in the job summary. Do not post to Discord."
+        required: false
+        default: false
+        type: boolean
+      check_feeds:
+        description: "Test every feed in feeds.json and show a health table. Do not post."
+        required: false
+        default: false
+        type: boolean
   schedule:
     - cron: "1 8 * * *"
       timezone: "America/Denver"
     - cron: "1 9 * * *"
       timezone: "America/Denver"
+    # HEARTBEAT (off). Uncomment only if the two entries above keep arriving hours late.
+    # Each tick checks whether today's brief is due and not yet posted, then posts it.
+    # Ticks after both briefs are posted exit in a few seconds and post nothing.
+    # - cron: "7,27,47 8-10 * * *"
+    #   timezone: "America/Denver"
+
+concurrency:
+  group: cyber-briefing
+  cancel-in-progress: false
 
 jobs:
   briefing:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-
+    permissions:
+      contents: write
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
@@ -35,16 +55,36 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Load state
+        run: |
+          mkdir -p state
+          if git ls-remote --exit-code --heads origin brief-state >/dev/null 2>&1; then
+            git fetch --depth=1 origin brief-state
+            git show FETCH_HEAD:state.json > state/state.json || rm -f state/state.json
+          fi
+
       - name: Run briefing
         run: python briefing.py
         env:
-          BRIEFING_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.mode || (github.event.schedule == '1 9 * * *' && 'update' || 'morning') }}
+          BRIEFING_MODE: ${{ github.event.inputs.mode || 'auto' }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+          CHECK_FEEDS: ${{ github.event.inputs.check_feeds || 'false' }}
           ASSET_KEYWORDS: ${{ vars.PRIORITY_KEYWORDS }}
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
 
-
-
+      - name: Save state
+        if: success() && hashFiles('state/CHANGED') != ''
+        run: |
+          cp state/state.json "$RUNNER_TEMP/state.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan brief-state-new
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/state.json" state.json
+          git add state.json
+          git commit --quiet -m "brief state $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push --force origin HEAD:refs/heads/brief-state
 
 
 
