@@ -13,9 +13,9 @@ name: Power and AI cyber briefing
           - update
 
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "1 8 * * *"
       timezone: "America/Denver"
-    - cron: "0 9 * * *"
+    - cron: "1 9 * * *"
       timezone: "America/Denver"
 
 jobs:
