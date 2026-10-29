@@ -38,7 +38,7 @@ jobs:
       - name: Run briefing
         run: python briefing.py
         env:
-          BRIEFING_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.mode || (github.event.schedule == '0 9 * * *' && 'update' || 'morning') }}
+          BRIEFING_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.mode || (github.event.schedule == '1 9 * * *' && 'update' || 'morning') }}
           ASSET_KEYWORDS: ${{ vars.PRIORITY_KEYWORDS }}
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
