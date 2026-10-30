@@ -119,13 +119,21 @@
     "note": "UNVERIFIED. Assumes the default branch is named main. Run check-feeds to confirm."
   },
   {
-    "name": "Dragos Blog",
-    "url": "https://www.dragos.com/blog/index.rss",
-    "category": "ics",
-    "boost": 2,
-    "enabled": false,
-    "note": "UNVERIFIED GUESS. Dragos publishes per-section .rss and index.rss files, but I did not confirm this exact URL. Run check-feeds, then enable."
-  },
+  "name": "Dragos Blog (blog.rss)",
+  "url": "https://www.dragos.com/blog.rss",
+  "category": "ics",
+  "boost": 2,
+  "enabled": false,
+  "note": "UNVERIFIED. Follows the .rss pattern Dragos uses on other pages."
+},
+{
+  "name": "Dragos Blog (feed)",
+  "url": "https://www.dragos.com/feed/",
+  "category": "ics",
+  "boost": 2,
+  "enabled": false,
+  "note": "UNVERIFIED. User-supplied candidate. Site is not WordPress, so this may 404."
+},
   {
     "name": "Industrial Cyber",
     "url": "https://industrialcyber.co/feed/",
