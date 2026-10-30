@@ -340,7 +340,10 @@ def fetch_kev(start):
 
 
 def load_feeds():
-    return json.loads(FEEDS_PATH.read_text())
+    try:
+        return json.loads(FEEDS_PATH.read_text())
+    except FileNotFoundError:
+        raise SystemExit(f"feeds.json not found at {FEEDS_PATH}. Commit it next to briefing.py.")
 
 
 def fetch_feed(feed):
