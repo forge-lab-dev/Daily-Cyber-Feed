@@ -344,6 +344,10 @@ def load_feeds():
         return json.loads(FEEDS_PATH.read_text())
     except FileNotFoundError:
         raise SystemExit(f"feeds.json not found at {FEEDS_PATH}. Commit it next to briefing.py.")
+    except json.JSONDecodeError as error:
+        raise SystemExit(
+            f"feeds.json is not valid JSON: line {error.lineno}, column {error.colno}: {error.msg}"
+        )
 
 
 def fetch_feed(feed):
@@ -351,10 +355,12 @@ def fetch_feed(feed):
     valid feed (HTML error pages, blocked requests, bad URLs)."""
     response = SESSION.get(feed["url"], timeout=(5, 20))
     response.raise_for_status()
+    if not response.content.strip():
+        raise ValueError("empty response body")
     parsed = feedparser.parse(response.content)
-    if not parsed.version:
+    if not parsed.get("version"):
         raise ValueError("response is not a valid feed")
-    return parsed.entries
+    return parsed.get("entries", [])
 
 
 def entry_time(entry):
@@ -758,4 +764,4 @@ def main(argv=None):
 
 
 if __name__ == "__main__":
-    sys.exit(main()) 
+    sys.exit(main())
