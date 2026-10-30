@@ -124,15 +124,15 @@
   "category": "ics",
   "boost": 2,
   "max_items": 5,
-  "enabled": false,
+  "enabled": true,
   "note": "UNVERIFIED. Google News site: search for Dragos posts. Links are Google redirects."
-}
+},
   {
     "name": "Industrial Cyber",
     "url": "https://industrialcyber.co/feed/",
     "category": "ics",
     "boost": 2,
-    "enabled": false,
+    "enabled": true,
     "note": "UNVERIFIED GUESS (standard WordPress feed path). Run check-feeds, then enable."
   },
   {
@@ -140,7 +140,7 @@
     "url": "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml",
     "category": "gov",
     "boost": 0,
-    "enabled": false,
+    "enabled": true,
     "note": "Listed as live by third-party directory (Feeder, checked Sep 27 to Oct 13, 2026). Not yet fetched from a GitHub runner. Disabled by default, high volume."
   }
 ]
