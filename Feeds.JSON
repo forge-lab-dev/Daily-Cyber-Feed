@@ -1,0 +1,145 @@
+[
+  {
+    "name": "SecurityWeek",
+    "url": "https://www.securityweek.com/feed/",
+    "category": "news",
+    "boost": 0,
+    "enabled": true,
+    "note": "Existing source. Also listed as live by Feeder."
+  },
+  {
+    "name": "The Record",
+    "url": "https://therecord.media/feed",
+    "category": "news",
+    "boost": 0,
+    "enabled": true,
+    "note": "Listed as live by third-party directory (Feeder, checked Sep 27 to Oct 13, 2026). Not yet fetched from a GitHub runner."
+  },
+  {
+    "name": "CyberScoop",
+    "url": "https://cyberscoop.com/feed/",
+    "category": "news",
+    "boost": 0,
+    "enabled": true,
+    "note": "Listed as live by third-party directory (Feeder, checked Sep 27 to Oct 13, 2026). Not yet fetched from a GitHub runner."
+  },
+  {
+    "name": "CISA Cybersecurity Advisories",
+    "url": "https://www.cisa.gov/cybersecurity-advisories/cybersecurity-advisories.xml",
+    "category": "gov",
+    "boost": 3,
+    "max_items": 8,
+    "enabled": true,
+    "note": "Listed as live by third-party directory (Feeder, checked Sep 27 to Oct 13, 2026). Not yet fetched from a GitHub runner. Joint advisories on threat actors and campaigns."
+  },
+  {
+    "name": "CISA ICS Advisories",
+    "url": "https://www.cisa.gov/cybersecurity-advisories/ics-advisories.xml",
+    "category": "ics",
+    "boost": 3,
+    "max_items": 8,
+    "enabled": true,
+    "note": "Listed as live by third-party directory (Feeder, checked Sep 27 to Oct 13, 2026). Not yet fetched from a GitHub runner. About 10 per week, capped at 8 per brief."
+  },
+  {
+    "name": "Cisco Talos",
+    "url": "https://blog.talosintelligence.com/rss/",
+    "category": "research",
+    "boost": 1,
+    "enabled": true,
+    "note": "Verified: appears as the feed's own self link in a Talos feed. CAIRN and CLOSEDQUORUM posts match the CAIRN terms."
+  },
+  {
+    "name": "Google Threat Intelligence (GTIG)",
+    "url": "https://cloudblog.withgoogle.com/topics/threat-intelligence/rss/",
+    "category": "research",
+    "boost": 1,
+    "enabled": true,
+    "note": "Listed as live by third-party directory (Feeder, checked Sep 27 to Oct 13, 2026). Not yet fetched from a GitHub runner."
+  },
+  {
+    "name": "Microsoft Security Blog",
+    "url": "https://www.microsoft.com/en-us/security/blog/feed/",
+    "category": "research",
+    "boost": 0,
+    "enabled": true,
+    "note": "Listed as live by third-party directory (Feeder, checked Sep 27 to Oct 13, 2026). Not yet fetched from a GitHub runner. High volume, mostly product posts. Scoring filters it."
+  },
+  {
+    "name": "Unit 42",
+    "url": "https://unit42.paloaltonetworks.com/feed/",
+    "category": "research",
+    "boost": 1,
+    "enabled": true,
+    "note": "Listed as live by third-party directory (Feeder, checked Sep 27 to Oct 13, 2026). Not yet fetched from a GitHub runner."
+  },
+  {
+    "name": "SentinelLabs",
+    "url": "https://www.sentinelone.com/labs/feed/",
+    "category": "research",
+    "boost": 1,
+    "enabled": true,
+    "note": "Listed as live by third-party directory (Feeder, checked Sep 27 to Oct 13, 2026). Not yet fetched from a GitHub runner."
+  },
+  {
+    "name": "OpenAI News",
+    "url": "https://openai.com/news/rss.xml",
+    "category": "ai-lab",
+    "boost": 0,
+    "enabled": true,
+    "note": "Listed as live by third-party directory (Feeder, checked Sep 27 to Oct 13, 2026). Not yet fetched from a GitHub runner. Only posts about malicious use or threat actors pass the filter. openai.com may block datacenter IPs, run check-feeds."
+  },
+  {
+    "name": "Google News: AI threat actors vs infrastructure",
+    "url": "https://news.google.com/rss/search?q=%28%22threat+actors%22+OR+%22state-sponsored%22+OR+%22nation-state%22%29+%28AI+OR+LLM+OR+%22AI-enabled%22%29+%28%22critical+infrastructure%22+OR+%22power+grid%22+OR+utilities+OR+government%29+when%3A2d&hl=en-US&gl=US&ceid=US:en",
+    "category": "aggregator",
+    "boost": 0,
+    "max_items": 10,
+    "enabled": true,
+    "note": "Search query feed. Catches press coverage of Anthropic, OpenAI and Google AI-misuse reports. Anthropic has no RSS feed. Lower trust, links are Google redirects."
+  },
+  {
+    "name": "CAIRN GitHub releases",
+    "url": "https://github.com/Cisco-Talos/Cognitive-Artifact-Intelligence-Research-Network/releases.atom",
+    "category": "watch",
+    "mode": "all",
+    "flag": "CAIRN",
+    "max_items": 3,
+    "enabled": true,
+    "note": "Canonical repo per the Talos post. No releases existed when checked on Oct 29, 2026, so an empty feed is expected."
+  },
+  {
+    "name": "CAIRN GitHub commits",
+    "url": "https://github.com/Cisco-Talos/Cognitive-Artifact-Intelligence-Research-Network/commits/main.atom",
+    "category": "watch",
+    "mode": "all",
+    "flag": "CAIRN",
+    "max_items": 3,
+    "enabled": true,
+    "note": "UNVERIFIED. Assumes the default branch is named main. Run check-feeds to confirm."
+  },
+  {
+    "name": "Dragos Blog",
+    "url": "https://www.dragos.com/blog/index.rss",
+    "category": "ics",
+    "boost": 2,
+    "enabled": false,
+    "note": "UNVERIFIED GUESS. Dragos publishes per-section .rss and index.rss files, but I did not confirm this exact URL. Run check-feeds, then enable."
+  },
+  {
+    "name": "Industrial Cyber",
+    "url": "https://industrialcyber.co/feed/",
+    "category": "ics",
+    "boost": 2,
+    "enabled": false,
+    "note": "UNVERIFIED GUESS (standard WordPress feed path). Run check-feeds, then enable."
+  },
+  {
+    "name": "UK NCSC",
+    "url": "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml",
+    "category": "gov",
+    "boost": 0,
+    "enabled": false,
+    "note": "Listed as live by third-party directory (Feeder, checked Sep 27 to Oct 13, 2026). Not yet fetched from a GitHub runner. Disabled by default, high volume."
+  }
+]
