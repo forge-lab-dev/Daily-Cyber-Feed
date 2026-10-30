@@ -51,6 +51,7 @@ def env(tmp_path, monkeypatch):
     (web / "empty.xml").write_text(atom([]))
     (web / "cairn.xml").write_text(atom([("Add family report", "http://example.test/c1", recent)]))
     (web / "notafeed.xml").write_text("<html><body>Access denied</body></html>")
+    (web / "zero.xml").write_bytes(b"")
     (web / "kev.json").write_text(json.dumps({"vulnerabilities": [{
         "cveID": "CVE-2026-1111", "vendorProject": "Siemens", "product": "SCADA",
         "dateAdded": "2026-10-30", "dueDate": "2026-11-20",
@@ -71,6 +72,7 @@ def env(tmp_path, monkeypatch):
         {"name": "Empty Feed", "url": f"{base}/empty.xml"},
         {"name": "Blocked Feed", "url": f"{base}/notafeed.xml"},
         {"name": "Missing Feed", "url": f"{base}/missing.xml"},
+        {"name": "Zero Byte Feed", "url": f"{base}/zero.xml"},
         {"name": "CAIRN", "url": f"{base}/cairn.xml", "mode": "all", "flag": "CAIRN"},
         {"name": "Disabled", "url": f"{base}/ai.xml", "enabled": False},
     ]
@@ -142,6 +144,7 @@ def test_one_bad_feed_does_not_stop_the_rest(env):
     assert by["AI Feed"]["ok"] and by["Empty Feed"]["ok"] and by["CAIRN"]["ok"]
     assert not by["Blocked Feed"]["ok"] and "valid feed" in by["Blocked Feed"]["error"]
     assert not by["Missing Feed"]["ok"] and "404" in by["Missing Feed"]["error"]
+    assert not by["Zero Byte Feed"]["ok"] and by["Zero Byte Feed"]["error"].endswith("empty response body")
     titles = [i.title for i in items]
     assert any("AI-enabled malware" in t for t in titles)
     assert not any("phone" in t for t in titles)
@@ -206,6 +209,10 @@ def test_all_sources_down_exits_nonzero(env, monkeypatch):
 
 
 def test_state_prunes_old_entries():
+    st = b._blank_state()
+    st["seen"]["kev"] = {"old": "2026-01-01", "new": "2026-10-29"}
+    b.prune_state(st, T0)
+    assert list(st["seen"]["kev"]) == ["new"]
     st = b._blank_state()
     st["seen"]["kev"] = {"old": "2026-01-01", "new": "2026-10-29"}
     b.prune_state(st, T0)
