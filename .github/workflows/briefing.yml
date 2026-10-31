@@ -27,6 +27,8 @@ name: Power and AI cyber briefing
       timezone: "America/Denver"
     - cron: "1 9 * * *"
       timezone: "America/Denver"
+    - cron: "7,27,47 8-10 * * *"
+      
     # HEARTBEAT (off). Uncomment only if the two entries above keep arriving hours late.
     # Each tick checks whether today's brief is due and not yet posted, then posts it.
     # Ticks after both briefs are posted exit in a few seconds and post nothing.
