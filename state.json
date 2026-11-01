@@ -1,0 +1,56 @@
+{
+ "last_post_utc": "2026-11-01T19:29:45.189719+00:00",
+ "posted": {
+  "2026-10-29": {
+   "morning": "2026-10-30T03:25:44.068657+00:00",
+   "update": "superseded"
+  },
+  "2026-10-30": {
+   "morning": "2026-10-30T19:08:34.930071+00:00",
+   "update": "superseded"
+  },
+  "2026-10-31": {
+   "morning": "2026-10-31T14:28:48.512512+00:00",
+   "update": "2026-10-31T18:26:07.184195+00:00"
+  },
+  "2026-11-01": {
+   "morning": "2026-11-01T19:29:45.189719+00:00",
+   "update": "superseded"
+  }
+ },
+ "seen": {
+  "kev": {
+   "CVE-2026-111357": "2026-10-31",
+   "CVE-2026-118527": "2026-10-31",
+   "CVE-2026-41709": "2026-10-29",
+   "CVE-2026-46300": "2026-10-29",
+   "CVE-2026-76418": "2026-10-29",
+   "CVE-2026-97229": "2026-10-29"
+  },
+  "news": {
+   "https://cyberscoop.com/volt-typhoon-silent-train-covert-ephemeral-network-black-lotus-labs": "2026-10-29",
+   "https://github.com/cisco-talos/cognitive-artifact-intelligence-research-network/commit/57ab1b683c8a8cd81a1f4a43675b201ea8eff59f": "2026-10-31",
+   "https://github.com/cisco-talos/cognitive-artifact-intelligence-research-network/commit/f27f0ab60fd029ab2d16a5cde8558b00ea719384": "2026-10-31",
+   "https://github.com/cisco-talos/cognitive-artifact-intelligence-research-network/commit/f799f669b841dae5792e2dd5b4833c8630ab5433": "2026-10-29",
+   "https://industrialcyber.co/cisa/cisa-2030-targets-ot-modernization-asset-visibility-supply-chain-security-through-risk-based-critical-infrastructure-defense": "2026-10-29",
+   "https://industrialcyber.co/critical-infrastructure/mccormick-introduces-common-sense-cloud-security-act-to-strengthen-cloud-defenses-protect-critical-infrastructure": "2026-10-29",
+   "https://industrialcyber.co/reports/australia-reports-20-rise-in-cyber-incidents-nearly-80-jump-in-threat-notifications-amid-critical-infrastructure-risks": "2026-10-30",
+   "https://news.google.com/rss/articles/cbmigwfbvv95cuxnm0lhbk5rlunkrg5scgnvcfpzunhqrwrqsvphsllxt2hqblbxqy1fylrvrkrhazzdtv90ndbqandtzmzxuvvrb3dmmxrit1bkaw5wmxiwmdrnenfru3nnzg1cszdlzvfumzdnak1qrdjiek4zwkq5cwm3x0rva2headh3ma": "2026-10-29",
+   "https://www.cisa.gov/news-events/ics-advisories/icsa-26-302-01": "2026-10-29",
+   "https://www.cisa.gov/news-events/ics-advisories/icsa-26-302-02": "2026-10-29",
+   "https://www.cisa.gov/news-events/ics-advisories/icsa-26-302-03": "2026-10-29",
+   "https://www.securityweek.com/in-other-news-anthropic-breach-dispute-uefi-flaw-hits-most-servers-cloudflare-ai-data-leak": "2026-10-30"
+  },
+  "nvd": {
+   "CVE-2016-20084": "2026-10-29",
+   "CVE-2026-107019": "2026-10-29",
+   "CVE-2026-115328": "2026-10-29",
+   "CVE-2026-117601": "2026-10-29",
+   "CVE-2026-21589": "2026-10-29",
+   "CVE-2026-57446": "2026-10-29",
+   "CVE-2026-61626": "2026-10-30",
+   "CVE-2026-61627": "2026-10-30",
+   "CVE-2026-85856": "2026-10-29"
+  }
+ }
+}
