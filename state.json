@@ -1,0 +1,166 @@
+{
+ "last_post_utc": "2026-11-13T16:10:38.642145+00:00",
+ "posted": {
+  "2026-10-30": {
+   "morning": "2026-10-30T19:08:34.930071+00:00",
+   "update": "superseded"
+  },
+  "2026-10-31": {
+   "morning": "2026-10-31T14:28:48.512512+00:00",
+   "update": "2026-10-31T18:26:07.184195+00:00"
+  },
+  "2026-11-01": {
+   "morning": "2026-11-01T19:29:45.189719+00:00",
+   "update": "superseded"
+  },
+  "2026-11-02": {
+   "morning": "2026-11-02T18:13:23.142702+00:00",
+   "update": "superseded"
+  },
+  "2026-11-03": {
+   "morning": "2026-11-03T16:07:23.448760+00:00",
+   "update": "superseded"
+  },
+  "2026-11-04": {
+   "morning": "2026-11-04T16:12:21.913461+00:00",
+   "update": "superseded"
+  },
+  "2026-11-05": {
+   "morning": "2026-11-05T16:24:42.310964+00:00",
+   "update": "superseded"
+  },
+  "2026-11-06": {
+   "morning": "2026-11-06T15:52:09.704203+00:00",
+   "update": "2026-11-06T20:48:37.590672+00:00"
+  },
+  "2026-11-07": {
+   "morning": "2026-11-07T19:20:52.594990+00:00",
+   "update": "superseded"
+  },
+  "2026-11-08": {
+   "morning": "2026-11-08T15:02:03.790021+00:00",
+   "update": "2026-11-08T19:28:38.399224+00:00"
+  },
+  "2026-11-09": {
+   "morning": "2026-11-09T18:41:24.488956+00:00",
+   "update": "superseded"
+  },
+  "2026-11-10": {
+   "morning": "2026-11-10T16:23:10.883577+00:00",
+   "update": "superseded"
+  },
+  "2026-11-11": {
+   "morning": "2026-11-11T16:04:28.554662+00:00",
+   "update": "superseded"
+  },
+  "2026-11-12": {
+   "morning": "2026-11-12T16:45:14.179206+00:00",
+   "update": "superseded"
+  },
+  "2026-11-13": {
+   "morning": "2026-11-13T16:10:38.642145+00:00",
+   "update": "superseded"
+  }
+ },
+ "seen": {
+  "kev": {
+   "CVE-2024-27834": "2026-11-05",
+   "CVE-2026-102895": "2026-11-10",
+   "CVE-2026-111357": "2026-10-31",
+   "CVE-2026-111560": "2026-11-11",
+   "CVE-2026-111793": "2026-11-11",
+   "CVE-2026-116606": "2026-11-11",
+   "CVE-2026-116779": "2026-11-10",
+   "CVE-2026-118527": "2026-10-31",
+   "CVE-2026-119977": "2026-11-04",
+   "CVE-2026-123158": "2026-11-10",
+   "CVE-2026-123218": "2026-11-10",
+   "CVE-2026-124194": "2026-11-11",
+   "CVE-2026-125350": "2026-11-11",
+   "CVE-2026-19868": "2026-11-07",
+   "CVE-2026-20320": "2026-11-11"
+  },
+  "news": {
+   "https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models": "2026-11-02",
+   "https://github.com/cisco-talos/cognitive-artifact-intelligence-research-network/commit/57ab1b683c8a8cd81a1f4a43675b201ea8eff59f": "2026-10-31",
+   "https://github.com/cisco-talos/cognitive-artifact-intelligence-research-network/commit/f27f0ab60fd029ab2d16a5cde8558b00ea719384": "2026-10-31",
+   "https://industrialcyber.co/cisa/cisa-urges-critical-infrastructure-owners-to-prioritize-ot-security-operational-continuity-recovery-planning-in-2026-campaign": "2026-11-03",
+   "https://industrialcyber.co/cisa/cisas-installed-base-program-to-help-oems-identify-and-secure-internet-exposed-ot-assets-across-critical-infrastructure": "2026-11-10",
+   "https://industrialcyber.co/critical-infrastructure/australias-cisc-sharpens-critical-infrastructure-risk-guidance-urges-stronger-cyber-and-supply-chain-controls": "2026-11-04",
+   "https://industrialcyber.co/critical-infrastructure/lumen-details-volt-typhoons-silent-train-framework-exploiting-zero-days-to-target-us-critical-infrastructure-sites": "2026-11-02",
+   "https://industrialcyber.co/critical-infrastructure/ncsc-annual-review-2026-warns-ai-powered-malware-could-target-uk-critical-infrastructure-by-2028": "2026-11-04",
+   "https://industrialcyber.co/critical-infrastructure/ncsc-launches-cyas-scheme-to-boost-critical-infrastructure-cyber-resilience-through-adversary-simulation-testing": "2026-11-13",
+   "https://industrialcyber.co/features/industrial-ai-adoption-outpaces-security-readiness-leaving-ot-environments-exposed-to-emerging-threats": "2026-11-03",
+   "https://industrialcyber.co/features/project-watershed-250-puts-water-utility-cybersecurity-under-scrutiny-though-long-term-funding-remains-unresolved": "2026-11-10",
+   "https://industrialcyber.co/hall-of-fame/hall-of-fame-industrial-cybersecurity-practitioner-and-community-builder-mike-holcomb": "2026-11-08",
+   "https://industrialcyber.co/industrial-cyber-attacks/france-us-suspect-iran-behind-cyberattacks-on-refrigeration-controllers-at-700-supermarkets-across-europe": "2026-11-11",
+   "https://industrialcyber.co/news/dispel-joins-white-house-backed-project-lifeline-250-to-secure-remote-access-at-rural-hospitals": "2026-11-04",
+   "https://industrialcyber.co/news/nozomi-vantage-for-government-secures-fedramp-moderate-certification-for-federal-ot-and-iot-monitoring": "2026-11-10",
+   "https://industrialcyber.co/news/rockwell-automation-expands-secureot-capabilities-to-help-oems-address-emerging-cybersecurity-regulations": "2026-11-02",
+   "https://industrialcyber.co/ransomware/maersk-investigates-legacy-system-breach-after-whitearmor-ransomware-group-claims-100gb-logistics-data-theft": "2026-11-12",
+   "https://industrialcyber.co/regulation-standards-and-compliance/otcc-cites-ai-driven-vulnerability-exploitation-in-push-for-10-year-cisa-2015-reauthorization": "2026-11-05",
+   "https://industrialcyber.co/reports/ai-tears-through-legacy-tcp-ip-stacks-exposing-vulnerabilities-across-critical-infrastructure-ot-and-iot-devices": "2026-11-13",
+   "https://industrialcyber.co/reports/australia-reports-20-rise-in-cyber-incidents-nearly-80-jump-in-threat-notifications-amid-critical-infrastructure-risks": "2026-10-30",
+   "https://industrialcyber.co/risk-management/australias-2026-risk-review-identifies-ai-as-a-growing-threat-multiplier-for-critical-infrastructure-security": "2026-11-06",
+   "https://industrialcyber.co/threats-attacks/sans-2026-survey-finds-sharp-rise-in-ics-ot-cyber-incidents-slower-detection-more-severe-operational-impacts": "2026-11-13",
+   "https://industrialcyber.co/transport/ot-isac-details-aviation-cybersecurity-risks-involving-passenger-reservation-systems-airport-ot-communications-protocols": "2026-11-05",
+   "https://industrialcyber.co/utilities-energy-power-water-waste/doe-advances-ai-forts-program-to-develop-superintelligence-powered-cybersecurity-tools-for-critical-energy-infrastructure": "2026-11-13",
+   "https://news.google.com/rss/articles/cbmi6gfbvv95cuxpd1zouephqzcywhg2cfpmqxn6v0ztqmlqm2pdac0yq09zylrktnbnczg5cwvybjitymszzg9wenfkbmz0yxiycw5aadvuzi1wekhssk1wqjjrwjvjetzwdvrbyjdkvgpavja3ytbhnmo0bznyzxpfewdiblvsddlpd2ywvw5mwvvmblzomu1rnm5oskdtes15t0mty3pnns1mew5pdwryyw9fuvayogxlv19on2v5djzot2przenhr2i4dfqysvhjmmppdhzevg5gak1vm0jnq0t4detgte5vvzb1mhr6ugtyywc": "2026-11-09",
+   "https://news.google.com/rss/articles/cbmimwjbvv95cuxqsmmxvtrjtkftqulkrjmtwfn5snlczdd3lurrnxc5t2txws1lbhfpy1viwm9pnmhimi1sngrvakm1zhcyvljsndvubkdfdgvnwvluehnfdgyxrfdkbhhuamf1a3eynnrdwnvkz2noquvwzfh1oefhvmlovfheegpzukjqddb0zy1yqtjbak9foguta0rwrlhjqm5mr2nibi1vq0fjbjfxofphsc1xrlbsynjtt3u0tjlhqmktwwfmsc1gberpmw5rvhjpbvflrwz6zwv5rllzdzj3ckfvswvmaxrnbmhtte0zdwl0ei1vawtnlwkzme1huv9jugjvltctegxlofblsuowm1lun0feutv4ckvzegldcu5z": "2026-11-04",
+   "https://news.google.com/rss/articles/cbminafbvv95cuxocepnwxvkqxdnnupiz1i5uf9uvwxjvnjxbnppnhlnc1rqmwzrudzby1f5ugjfc01hy1riyxjllvjmqk1nctfidkm5ujvirwzktjd0chhby05mqjhub2zfdlznalrjsuxyblrac2fst0pmmxzqnzrlwelwmdrzq25pbevhshz2rfrdofnmy0jougx0og5nt2rhvhnbvmu": "2026-11-06",
+   "https://news.google.com/rss/articles/cbmioafbvv95cuxod2xiuhzwbw04t01hwhzyqwv1weplcenywudvove4wehzqjvtrgiweuvns0dwck9vluf5ble2ynvusmrqrnhtq0o0x0xbetnmefq1bzhzqxddqljwz1jxstmyyutgt3hsdhrkc0l0nde0ymjsv1z5chlcumy4z2dvy1ltsmc0q1byzjniczhtmm5wb1dhzzz2ewdox3n1qxnb": "2026-11-03",
+   "https://news.google.com/rss/articles/cbmirgfbvv95cuxqwwnvltdys1lqx0dad0hlnvh2umryotm1cuhjry1wtldps2hhbxhld0hdamhor3j4cmpsyxpzovfeuwrvbxfxsfhra3jxofpsdhzomutkzv9jmghfsekyue95tjvim1dfynzyv3pidg9lohvkou5tajn0qwrrum1kthlzmkf0rfzldk94t3phtznhbehgmmvlmmllzkw4rwv1q3frv3resjfxc1psmee": "2026-11-03",
+   "https://news.google.com/rss/articles/cbmisajbvv95cuxqntu5v3pjsvrfx1e2und0yxztv05mx3hjuhg0renitki5mhfgzeq3s0ltthljzvzqew13mk5tm0p3v0vvsljxme5lcjf0amh5q3v2yw54cnjvemkyuwzqudzvq25fsk5lwejnmhlfb05snzdzafz3y25fnw1ft04zuwfyvxhfbun3x0e4m1rov3vjdxetu2drczhfrgzedu0xynbcwefxoe5yakuzrgliqll3z2rpwlprrtdauvqzanrfs29jeepkx2jwc2frrelwdedoovdzywfvz2cwmxc2dmo3tdjtx0vemwjpu1q5vgfhnenhv3bocffqbe5xzjvbuktdujrdtwkwlurdrw1gsnnfynjrwjets291y3nnavdaovrwaetum0vhq2hiru1l": "2026-11-12",
+   "https://news.google.com/rss/articles/cbmiswfbvv95cuxqewi3dkjivgnfodvrqmvkshn5mjnkbji3q2h0nvbnsfrgwu1usexnv1qtdwe4uknaef9jcxq3rfliz2l2sey5mmtldm9zqwnms05enxfurjfusu1wvuthm29lz0tiuuhhwvdznuzuddfgm21rr3c5tjdzrw9hsxbfdnfwuejja2vzs1fkuzyxm2pqnxj3bmhmdhc1aupfofa2ze1ys0ndq1jly1d5u2diagixzw": "2026-11-04",
+   "https://news.google.com/rss/articles/cbmiuwfbvv95cuxotdduzevtwuvwoe90q1zdwjdpv0tgee5xze1xz3l4bkyzq2voow5dawdbskzoadhln2lpae1scli0ru1nvhozrkn1nkrtvlbrcmnrrlg3t2l2bjk2ejricnf1mwt2nvllwnljrgpsbwvjsmryddvzzhdyytnwtwrlzw01nxfdz2czmu93u3rhu2lfqnbmmnbmnwk3chlmckpecnlpdxvjt0jwdw9qtldscxk3d1jocf9cc0pn": "2026-11-05",
+   "https://news.google.com/rss/articles/cbmivwfbvv95cuxqwhmzwedpugdlrjvnzu1kb1p4belzqkrbckrfm3hsrjhuzxvltun2szdlbwroudfxoha5nulpqnzva0f3mwdkqvfnznnuy0jocfhictr4vnp2cfe3z0m3dkx2rnjhbg1vcuzuendjq3bxbmt2lue2ofnoug5yb2fdakpmzm1uefi0vtjaudbhc0taq0u0tm9fdepfcgg0nnjhd3ywrdztznfpdwtmos1iqxpkzg9tzmtoa29srjraqq": "2026-11-04",
+   "https://news.google.com/rss/articles/cbmiwkfvx3lxtfbucedgq3l2zdhmwuhvt011edzgnzlxste5ofhgbxowwwrisu5eoc1zqlrrdfr2stzgnutzzzrxv3lomg8tz2rjn09ubtvlz09pt2dybnvvyvqwd9ibx0fvx3lxtfb0r2i4zgdsd0lovut3afhib0o0uezmoe9vr3bsnvhtota4q085cjnpd2ztylnet3jza3fnuzjnufvkbxzqaxpoejnzb1drnkm1nxpnr3fqaurfskxsrwvn": "2026-11-12",
+   "https://news.google.com/rss/articles/cbmiwwfbvv95cuxpsc1bmen5ugthyk8zqm9xzzzpd1nndhhtwc02mjnsudzamtzuehjmrxn0eutvrnftvhjlrmnyukxgbdcymmfycvywdhv0n180us1qeuxlvezsazdjlwy4vvn5vefkewd4tdzsb2fov1vttwnov2rjbkrgzufqchldt3rvtth1wlr5cy1yauxlvwjasldjswtjof95ywjsrmswtuyym2rxallorlhtr1bidhp6rvjxx2djsmjhchg1nuhodnm": "2026-11-05",
+   "https://news.google.com/rss/articles/cbmix0fvx3lxte1wzlh6qkf3q1brx3hqehbzwe10nvlsbgh2vnnoa2lhx0lecthqy0rkavnjbufcrefqvnblbu9fvwe1mzbiehnxvmxewfvswkfodnnld05osuriwlfgqnvn0gffqvvfexfmtxbmwhpcqxddufffegp4chnytxq1wwxsahzwc05raudfsurxofbjreppu0ltqujeqvbwcettt0vvytuzmeh4c3fwberyvwxaqwh2c2v3tk5jrehauuzcdu0": "2026-11-12",
+   "https://news.google.com/rss/articles/cbmixwfbvv95cuxqn0n4vkvtajfxbxrpcgrtwwxjni16tvlheexsbhc3nhdmykhflxlzeedctgxaav9mnkp3wm9nlu0wata1muvnq1pirdz2zzq2x1mzri12n0jfal9xm2zpatznu1prexhrempzz3bjz0f2x3c1bdzvrmo3qw9hqtzlqkfsogr0s0y5a0rylxhpset5bevsmi1ma0ritdm0uudor0rfcxrfs3q1ajlutddbt3hzyznbzm1ls0nfrmtwnw5ickp4qjrz": "2026-11-06",
+   "https://news.google.com/rss/articles/cbmizgfbvv95cuxoogp6vjlps3zwc01qz0zynvbrnu1cq00zwtlju0ownzbweulpvlrhmexfckt2qu9hrnfrx3bnttzqcfjos2czbdf4lxfndudinkldaxzvxzuzazmtt3zbavvtwhbwnkvub0ktdfb5bg1qs0k4y1r4aluyakitquxcai1jnmg5ywdtzkszdmthyjhyv3jvbetbwmrareq2b0c1axnznlfjwdf3rkd4c0k1zk5uv0g1mxpldzdhbgg3nxnyzuvln05bzjnra2rluq": "2026-11-05",
+   "https://openai.com/index/grid-protectors-program": "2026-11-02",
+   "https://therecord.media/kazakhstan-hackers-central-asia": "2026-11-12",
+   "https://unit42.paloaltonetworks.com/cairn-framework-ai-autonomous-attacks": "2026-11-12",
+   "https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets": "2026-11-06",
+   "https://www.microsoft.com/en-us/security/blog/2026/11/06/artex-abuse-expands-as-cybercriminals-target-financial-sector": "2026-11-07",
+   "https://www.ncsc.gov.uk/news/cyber-chief-uk-facing-ai-powered-attacks-on-critical-infrastructure-in-two-years": "2026-11-03",
+   "https://www.ncsc.gov.uk/report/artificial-intelligence-and-cyber-intrusion": "2026-11-03",
+   "https://www.securityweek.com/chainalysis-discloses-data-breach-following-ai-driven-cyberattack": "2026-11-02",
+   "https://www.securityweek.com/ics-patch-tuesday-siemens-flags-high-severity-flaws-node2shell-exposure": "2026-11-11",
+   "https://www.securityweek.com/in-other-news-anthropic-breach-dispute-uefi-flaw-hits-most-servers-cloudflare-ai-data-leak": "2026-10-30",
+   "https://www.securityweek.com/uk-cyber-chief-says-the-uk-will-face-ai-cyberattacks-on-critical-infrastructure-by-2028": "2026-11-03"
+  },
+  "nvd": {
+   "CVE-2022-2502": "2026-11-10",
+   "CVE-2022-4608": "2026-11-10",
+   "CVE-2023-34971": "2026-11-10",
+   "CVE-2023-34972": "2026-11-10",
+   "CVE-2023-34973": "2026-11-10",
+   "CVE-2024-49849": "2026-11-10",
+   "CVE-2024-53691": "2026-11-04",
+   "CVE-2024-54678": "2026-11-10",
+   "CVE-2025-35987": "2026-11-02",
+   "CVE-2025-40742": "2026-11-10",
+   "CVE-2025-40759": "2026-11-10",
+   "CVE-2025-62848": "2026-11-04",
+   "CVE-2026-117602": "2026-11-06",
+   "CVE-2026-117603": "2026-11-02",
+   "CVE-2026-118124": "2026-11-11",
+   "CVE-2026-119859": "2026-11-11",
+   "CVE-2026-119860": "2026-11-11",
+   "CVE-2026-119861": "2026-11-11",
+   "CVE-2026-122179": "2026-11-11",
+   "CVE-2026-126133": "2026-11-11",
+   "CVE-2026-20702": "2026-11-02",
+   "CVE-2026-21580": "2026-11-10",
+   "CVE-2026-47720": "2026-11-10",
+   "CVE-2026-58114": "2026-11-10",
+   "CVE-2026-58115": "2026-11-05",
+   "CVE-2026-59082": "2026-11-10",
+   "CVE-2026-61626": "2026-10-30",
+   "CVE-2026-61627": "2026-10-30",
+   "CVE-2026-84717": "2026-11-06"
+  }
+ }
+}
