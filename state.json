@@ -1,0 +1,185 @@
+{
+ "last_post_utc": "2026-11-27T18:06:04.689814+00:00",
+ "posted": {
+  "2026-11-13": {
+   "morning": "2026-11-13T16:10:38.642145+00:00",
+   "update": "superseded"
+  },
+  "2026-11-14": {
+   "morning": "2026-11-14T19:51:33.885032+00:00",
+   "update": "superseded"
+  },
+  "2026-11-15": {
+   "morning": "2026-11-15T15:36:36.066176+00:00",
+   "update": "2026-11-15T20:18:01.121795+00:00"
+  },
+  "2026-11-16": {
+   "morning": "2026-11-16T18:22:46.885094+00:00",
+   "update": "superseded"
+  },
+  "2026-11-17": {
+   "morning": "2026-11-17T17:33:51.266396+00:00",
+   "update": "superseded"
+  },
+  "2026-11-18": {
+   "morning": "2026-11-18T17:10:46.461502+00:00",
+   "update": "superseded"
+  },
+  "2026-11-19": {
+   "morning": "2026-11-19T17:18:40.645470+00:00",
+   "update": "superseded"
+  },
+  "2026-11-20": {
+   "morning": "2026-11-20T16:54:53.294953+00:00",
+   "update": "superseded"
+  },
+  "2026-11-21": {
+   "morning": "2026-11-21T16:05:38.237306+00:00",
+   "update": "superseded"
+  },
+  "2026-11-22": {
+   "morning": "2026-11-22T16:12:06.482604+00:00",
+   "update": "superseded"
+  },
+  "2026-11-23": {
+   "morning": "2026-11-23T20:05:16.022542+00:00",
+   "update": "superseded"
+  },
+  "2026-11-24": {
+   "morning": "2026-11-24T19:28:24.301640+00:00",
+   "update": "superseded"
+  },
+  "2026-11-25": {
+   "morning": "2026-11-25T18:37:04.005714+00:00",
+   "update": "superseded"
+  },
+  "2026-11-26": {
+   "morning": "2026-11-26T18:21:52.045363+00:00",
+   "update": "superseded"
+  },
+  "2026-11-27": {
+   "morning": "2026-11-27T18:06:04.689814+00:00",
+   "update": "superseded"
+  }
+ },
+ "seen": {
+  "kev": {
+   "CVE-2023-25914": "2026-11-26",
+   "CVE-2023-25915": "2026-11-26",
+   "CVE-2024-10441": "2026-11-19",
+   "CVE-2025-41450": "2026-11-26",
+   "CVE-2025-42884": "2026-11-21",
+   "CVE-2026-103406": "2026-11-26",
+   "CVE-2026-114713": "2026-11-14",
+   "CVE-2026-115731": "2026-11-18",
+   "CVE-2026-123039": "2026-11-14",
+   "CVE-2026-123890": "2026-11-21",
+   "CVE-2026-129448": "2026-11-21",
+   "CVE-2026-131914": "2026-11-25",
+   "CVE-2026-132165": "2026-11-25",
+   "CVE-2026-132224": "2026-11-25",
+   "CVE-2026-133275": "2026-11-26",
+   "CVE-2026-133303": "2026-11-26",
+   "CVE-2026-133311": "2026-11-26",
+   "CVE-2026-133323": "2026-11-26",
+   "CVE-2026-133324": "2026-11-26",
+   "CVE-2026-133469": "2026-11-26",
+   "CVE-2026-133968": "2026-11-24",
+   "CVE-2026-134624": "2026-11-24",
+   "CVE-2026-40217": "2026-11-19",
+   "CVE-2026-76466": "2026-11-21",
+   "CVE-2026-90436": "2026-11-19",
+   "CVE-2026-90817": "2026-11-19"
+  },
+  "news": {
+   "https://blog.talosintelligence.com/artex-and-beyond": "2026-11-14",
+   "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold": "2026-11-16",
+   "https://cyberscoop.com/ot-security-post-quantum-cryptography-op-ed": "2026-11-24",
+   "https://cyberscoop.com/sean-cairncross-out-national-cyber-director": "2026-11-20",
+   "https://cyberscoop.com/uk-ncsc-ai-assisted-cyberattacks": "2026-11-24",
+   "https://industrialcyber.co/ai/otcc-urges-us-policymakers-to-bolster-ot-cybersecurity-fund-resilience-govern-ai-agents-as-threats-accelerate": "2026-11-18",
+   "https://industrialcyber.co/cisa/cisa-flags-critical-vulnerabilities-in-danfoss-schneider-electric-and-automationdirect-industrial-products": "2026-11-27",
+   "https://industrialcyber.co/control-device-security/vulncheck-finds-14-vulnerabilities-in-copeland-xweb-evo-refrigeration-systems-two-exploited-in-the-wild": "2026-11-17",
+   "https://industrialcyber.co/critical-infrastructure/fdd-urges-us-congress-to-designate-space-systems-as-critical-infrastructure-sector-citing-cyber-and-counterspace-threats": "2026-11-26",
+   "https://industrialcyber.co/critical-infrastructure/ncsc-launches-cyas-scheme-to-boost-critical-infrastructure-cyber-resilience-through-adversary-simulation-testing": "2026-11-13",
+   "https://industrialcyber.co/features/continuous-process-manufacturing-why-ot-cybersecurity-demands-different-approach-when-plants-cannot-stop": "2026-11-17",
+   "https://industrialcyber.co/features/mythos-changes-the-clock-what-anthropics-cyber-capable-ai-models-mean-for-ot-critical-infrastructure-security": "2026-11-24",
+   "https://industrialcyber.co/industrial-cyber-attacks/levelblue-finds-cyberwarfare-increasingly-threatens-critical-infrastructure-and-connected-industrial-systems": "2026-11-20",
+   "https://industrialcyber.co/news/arcova-young-management-consulting-partner-to-integrate-cybersecurity-into-critical-infrastructure-engineering-and-delivery": "2026-11-18",
+   "https://industrialcyber.co/news/does-liberty-eclipse-tests-utility-incident-response-it-ot-coordination-and-power-grid-recovery-under-live-conditions": "2026-11-16",
+   "https://industrialcyber.co/news/emerson-databricks-target-it-ot-data-gap-through-native-integration-of-industrial-data-fabric-with-enterprise-ai-platform": "2026-11-24",
+   "https://industrialcyber.co/news/fortress-ai-launches-ai-native-platform-to-manage-cyber-supply-chain-risks-across-critical-infrastructure": "2026-11-18",
+   "https://industrialcyber.co/news/nozomi-networks-lockheed-martin-develop-automated-cybersecurity-assessment-capabilities-for-defense-environments": "2026-11-18",
+   "https://industrialcyber.co/ransomware/check-point-finds-ransomware-at-record-levels-as-n0n-rises-into-top-three-and-high-risk-genai-prompts-increase": "2026-11-16",
+   "https://industrialcyber.co/reports/ai-tears-through-legacy-tcp-ip-stacks-exposing-vulnerabilities-across-critical-infrastructure-ot-and-iot-devices": "2026-11-13",
+   "https://industrialcyber.co/reports/attackiq-reports-that-iranian-hackers-leverage-contractors-and-shared-access-to-expand-attacks-on-critical-infrastructure": "2026-11-19",
+   "https://industrialcyber.co/reports/claroty-finds-65000-consumer-devices-connected-to-critical-infrastructure-networks-exposing-ot-segmentation-gaps": "2026-11-19",
+   "https://industrialcyber.co/threats-attacks/sans-2026-survey-finds-sharp-rise-in-ics-ot-cyber-incidents-slower-detection-more-severe-operational-impacts": "2026-11-13",
+   "https://industrialcyber.co/utilities-energy-power-water-waste/doe-advances-ai-forts-program-to-develop-superintelligence-powered-cybersecurity-tools-for-critical-energy-infrastructure": "2026-11-13",
+   "https://industrialcyber.co/utilities-energy-power-water-waste/equinor-thwarts-cyberattack-as-separate-intrusion-at-skagerak-energi-raises-concerns-across-norways-energy-sector": "2026-11-20",
+   "https://industrialcyber.co/utilities-energy-power-water-waste/texas-cyber-command-adds-63-companies-to-project-watershed-250-to-bolster-water-utility-security": "2026-11-20",
+   "https://news.google.com/rss/articles/cbmi1afbvv95cuxqme01uzvzbglaohczrl94ze1svmdtm1ffrji5zhdywhnhawfymkmtt1etn0tzyzhvuxp4afpmsfpnzdhetuffcjvumhnmylitdwpnqu1xeerfbdixmw5pv3rftxrnrxzxytrftdnnn21mai1znkjqatnsqxrpencxy1flohuwqmlxzwtqme5onvq3rtyxyzzmsdqxdfhba1d3u2jhtmzmtdvhy1hlchnbeuvzserktufjouxbzknlqksylwxsn3nmdehfrfzpodhcavu4oq": "2026-11-14",
+   "https://news.google.com/rss/articles/cbmimafbvv95cuxoeva0cnz1uhfqtw5xekt3c1p1v2zna1o0af92ml9sedhnuku2wdvevuzudeg0umo4tjjyc05uty1pcu1za09dteg0c0hruuzjznrkejewyndeelmylxhwzvbac3bhzlfucmxgctawwvuwbk9mwdutx0r1nvjmttztbjizzdiyukplbfc2akj5vddcqtrrrmjxaq": "2026-11-23",
+   "https://news.google.com/rss/articles/cbminwjbvv95cuxozgnxrfvnqzzlzjlod2p2njvhwk5jc3nnamzzdlzcwxpnugtyswdnyvrhdf9rx0vunmvyumq1eeqyafu4qknklufcm1dpmmzxc1plsc14y3rlsly0bgvhvjrtqxzzzefbngrvcu1wsulrztdostq5akvxdxfqwv9wqs1kvdjxeehmchf0rxndntnlawzirwrgzndlzw44yl9xehhruhm0a3l6avzccvfszzn3tudiswnqtzrcdvm5dwdyv2d0bxrqagu5turzy0hsrwxvykxwa3byr1bymfl4n1jpqjfrdetzujlkvmrwcl9pou9ndkddrlg4d0ljnnc5uxd3dffrcu5ucvjaodhhutfhz05nbxd4rmlxv0dncw": "2026-11-16",
+   "https://news.google.com/rss/articles/cbmioafbvv95cuxpcww2owz3rw5jugh6wfj4rk5lmhznujvjn21hte9pcgtxteq4cf9rt3rbwmo5dexzem1vufh5zhdrx19rt3j2uljpdtjcunzmbg1xa1f4b1cydlgytdfst011ag5yqnu5wxpmmuj1alzqm3zjrhbilxbjmgriltz4bjhtww5htnjouzdsq1v3vxpnb1e0x0nzm1hzdtbnykgw": "2026-11-19",
+   "https://news.google.com/rss/articles/cbmiqgfbvv95cuxpyvpkuze3ruffmdkyqmu3nf9felzdc05tc1bdb2lzunfvazm2njhirgq0r1jdltleb190bu5mzgc3a3fscy1bzw14a2dju2psvnm4nld6agx2lut0z2rwmhzvs0rjyms5qw1rte1saxbvczvhtvm5m1pewmrxuullmknstwviwvj2teq0amgzvkxyqvvpajlwsnk3ykfzv2w2lxeztek2nvqxuq": "2026-11-16",
+   "https://news.google.com/rss/articles/cbmitgfbvv95cuxoz180axflaedqte9fcgzkbtlwx25psufztevus1fldkdismq3rtvucu1iau1wzs1dnlrfqmfzec1frzdlmxzjlxu5mwh0cvffbktwynz6azyweji3u0loodrzakpotwlcahdielfcc0drs1btrtfvqi1mytdqwwdinxv2luqws0jxb0ldclrudknir2xws1jtu2s2s1fjsexjadlhdlgxwvjkcu1va2rmr3jrxzj0udibuwfbvv95cuxoyuvfbkm2uvhxlxpmdkf3otltcv9usdrtuul6y1eyvm5rznnjlwhzutlnujnnsghtajzhamtuoffud2xkvehwzfvsdwfwzf8wek5fzutkb00tvddlefrtblbvnuczsxdwnnftchduoed2t1pyug9fr1fcz2l5anrzrhnxbjktrndynk5drld0sg1ncwkxq1flrgmwsk1qdhu4wdlbqlfpcvdjswzvytziafzot0hyzhpnm1nr": "2026-11-26",
+   "https://news.google.com/rss/articles/cbmix0fvx3lxte14mezxblputhvlbgrjoe1zm29js0z1vy1umgdpqzlmalllv1pezk1mr3jintq1vwrkx2pdnl9iatr6dnf6d2jgrxzmwgsxtmdmcgz6sei3wvplwjdmn3rz": "2026-11-16",
+   "https://therecord.media/amazon-research-cairn-ai-university-attacks-possible-zero-day": "2026-11-21",
+   "https://therecord.media/cyberattacks-uk-artificial-intelligence": "2026-11-24",
+   "https://therecord.media/european-commission-confirms-cyberattack-using-ai": "2026-11-19",
+   "https://therecord.media/microsoft-china-salt-typhoon-using-artex-ai-tool": "2026-11-26",
+   "https://therecord.media/norway-equinor-cyberattack-energy": "2026-11-18",
+   "https://unit42.paloaltonetworks.com/autonomous-ai-agent-threat-campaigns": "2026-11-24",
+   "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-01": "2026-11-17",
+   "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-02": "2026-11-17",
+   "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-03": "2026-11-17",
+   "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-04": "2026-11-17",
+   "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-05": "2026-11-17",
+   "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-08": "2026-11-17",
+   "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-09": "2026-11-17",
+   "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-11": "2026-11-17",
+   "https://www.cisa.gov/news-events/ics-advisories/icsa-26-323-01": "2026-11-19",
+   "https://www.cisa.gov/news-events/ics-advisories/icsa-26-323-02": "2026-11-19",
+   "https://www.cisa.gov/news-events/ics-advisories/icsa-26-323-03": "2026-11-19",
+   "https://www.cisa.gov/news-events/ics-advisories/icsa-26-328-01": "2026-11-24",
+   "https://www.cisa.gov/news-events/ics-advisories/icsa-26-328-02": "2026-11-24",
+   "https://www.cisa.gov/news-events/ics-advisories/icsa-26-328-03": "2026-11-24",
+   "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse": "2026-11-26",
+   "https://www.securityweek.com/amazon-china-linked-hackers-ai-agents-exploited-medical-software-zero-day": "2026-11-21",
+   "https://www.securityweek.com/anthropic-expands-enterprise-safeguards-for-detecting-ai-misuse": "2026-11-24",
+   "https://www.securityweek.com/barracuda-hacked-amid-surge-in-artex-powered-cyberattacks": "2026-11-16",
+   "https://www.securityweek.com/critical-apache-roller-axis-vulnerabilities-exploited-in-attacks": "2026-11-19",
+   "https://www.securityweek.com/in-other-news-norwegian-energy-firm-cyberattacks-supercomputer-hack-new-nightmare-eclipse-exploit": "2026-11-20"
+  },
+  "nvd": {
+   "CVE-2026-10765": "2026-11-24",
+   "CVE-2026-117601": "2026-11-20",
+   "CVE-2026-120387": "2026-11-17",
+   "CVE-2026-124754": "2026-11-24",
+   "CVE-2026-13137": "2026-11-24",
+   "CVE-2026-131578": "2026-11-27",
+   "CVE-2026-133849": "2026-11-20",
+   "CVE-2026-14569": "2026-11-24",
+   "CVE-2026-21590": "2026-11-18",
+   "CVE-2026-21591": "2026-11-18",
+   "CVE-2026-21593": "2026-11-18",
+   "CVE-2026-21594": "2026-11-18",
+   "CVE-2026-21595": "2026-11-18",
+   "CVE-2026-21596": "2026-11-18",
+   "CVE-2026-21598": "2026-11-18",
+   "CVE-2026-21599": "2026-11-18",
+   "CVE-2026-21600": "2026-11-18",
+   "CVE-2026-21601": "2026-11-18",
+   "CVE-2026-21602": "2026-11-18",
+   "CVE-2026-21603": "2026-11-18",
+   "CVE-2026-21605": "2026-11-18",
+   "CVE-2026-21606": "2026-11-18",
+   "CVE-2026-21607": "2026-11-18",
+   "CVE-2026-21609": "2026-11-17",
+   "CVE-2026-4641": "2026-11-27",
+   "CVE-2026-4642": "2026-11-27",
+   "CVE-2026-96771": "2026-11-20"
+  }
+ }
+}
